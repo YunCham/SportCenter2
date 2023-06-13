@@ -38,7 +38,7 @@
                     @endif
                     {{-- alerta --}}
                     @if (Session::has('message'))
-                        <div class="alert alert-danger alert-dismissible" role="alert">{{ Session::get('message') }}
+                        <div class="alert alert-success alert-dismissible text-white" role="alert">{{ Session::get('message') }}
                         </div>
                     @endif
                     <form wire:submit.prevent='storeUsuario'>

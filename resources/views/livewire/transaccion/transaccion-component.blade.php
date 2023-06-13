@@ -8,7 +8,7 @@
                     </div>
                     {{-- boton añadir --}}
                     <div class=" me-3 my-3 text-end">
-                        <a class="btn bg-gradient-dark mb-0" href="{{ route('usuario-registro') }}"><i
+                        <a class="btn bg-gradient-dark mb-0" href="{{ route('transaccion.registrar') }}"><i
                                 class="material-icons text-sm">add</i>&nbsp;&nbsp;Registrar</a>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                                                 class="text-secondary text-xs font-weight-bold">{{ $transaccion->fecha_hora_transaccion ?? 'Pago no realizado' }}</span>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="{{ route('usuario-editar', ['user_id' => $transaccion->id]) }}"
+                                            <a href="{{ route('Transaccion.editar', ['transaccion_id' => $transaccion->id]) }}"
                                                 class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
                                                 data-original-title="Edit user">
                                                 Editar
@@ -115,7 +115,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button"
-                                                                    class="btn btn-primary btn-sm"wire:click="deleteUsuario({{ $transaccion->id }})">Eliminar</button>
+                                                                    class="btn btn-primary btn-sm"wire:click="deleteTransaccion({{ $transaccion->id }})">Eliminar</button>
                                                                 <button type="button"
                                                                     class="btn btn-secondary btn-sm">Cancelar</button>
                                                                 </button>

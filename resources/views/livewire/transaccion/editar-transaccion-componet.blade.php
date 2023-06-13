@@ -41,7 +41,7 @@
                         <div class="alert alert-success alert-dismissible text-white" role="alert">{{ Session::get('message') }}
                         </div>
                     @endif
-                    <form wire:submit.prevent='storeTansaccion'>
+                    <form wire:submit.prevent='updateTansaccion'>
                         <div class="row">
 
                             <div class="mb-3 col-md-6">

@@ -14,8 +14,8 @@ class RegistrarMarcaComponent extends Component
     {
         $this->validate([
             'nombre' => 'required',
-
         ]);
+        
         $marca = new Marca();
         $marca->nombre = $this->nombre;
         $marca->save();

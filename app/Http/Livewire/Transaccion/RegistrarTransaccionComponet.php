@@ -36,6 +36,16 @@ class RegistrarTransaccionComponet extends Component
   //Implementacion de la  funcion de gruardar  datos
   public function storeTansaccion()
   {
+    // Dump los datos antes de la validación
+    // dd($this->fecha_hora_transaccion, 
+    // $this->tipo_transaccion, 
+    // $this->description, 
+    // $this->monto, 
+    // $this->metodo_pago, 
+    // $this->estado_transaccion, 
+    // $this->user_id, 
+    // $this->membresia_id);
+
     $this->validate([
       'fecha_hora_transaccion' => 'required',
       'tipo_transaccion' => 'required',
@@ -57,6 +67,7 @@ class RegistrarTransaccionComponet extends Component
     $transaccion->user_id = $this->user_id;
     $transaccion->membresia_id = $this->membresia_id;
 
+
     $transaccion->save();
     session()->flash('message', ' Registro Exitoso!');
   }
@@ -71,8 +82,8 @@ class RegistrarTransaccionComponet extends Component
 
   public function render()
   {
-    $users =User::orderBy('name', 'ASC')->get();
-    $membresias=Membresia::orderBy('nombre','ASC')->get();
-    return view('livewire.transaccion.registrar-transaccion-componet',['users'=>$users,'membresias'=>$membresias]);
+    $users = User::orderBy('name', 'ASC')->get();
+    $membresias = Membresia::orderBy('nombre', 'ASC')->get();
+    return view('livewire.transaccion.registrar-transaccion-componet', ['users' => $users, 'membresias' => $membresias]);
   }
 }
