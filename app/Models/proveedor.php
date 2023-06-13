@@ -20,5 +20,4 @@ class Proveedor extends Model
     {
         return $this->hasMany(NotaCompra::class);
     }
-
 }

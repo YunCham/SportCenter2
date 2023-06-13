@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Proveedor;
 
-use App\Models\proveedor;
+use App\Models\Proveedor;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
@@ -21,7 +21,7 @@ class EditarProveedorComponent extends Component
 
     public function mount($proveedor_id)
     {
-    $proveedor = proveedor::find($proveedor_id);
+    $proveedor = Proveedor::find($proveedor_id);
     $this->proveedor_id = $proveedor->id;
     $this->name = $proveedor->name;
     $this->phone = $proveedor->phone;
@@ -55,7 +55,7 @@ class EditarProveedorComponent extends Component
         'location' => 'required',
         'tipo_proveedor' => 'required',
     ]);
-    $proveedor = proveedor::find($this->proveedor_id);
+    $proveedor = Proveedor::find($this->proveedor_id);
     $proveedor->name = $this->name;
     $proveedor->email = $this->email;
     $proveedor->phone = $this->phone;
