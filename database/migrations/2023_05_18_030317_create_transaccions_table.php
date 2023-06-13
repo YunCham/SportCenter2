@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamp('fecha_hora_transaccion');
             $table->string('tipo_transaccion');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->decimal('monto', 12, 2);
             $table->string('metodo_pago');
             $table->string('estado_transaccion')->default('Pendiente');
